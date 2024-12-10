@@ -21,7 +21,7 @@ vocabular = {'Первое практическое занятие по Python':
 
 def aggregateTries(tries, row, test_name):
     tries[test_name]['question'] = row['question']
-    tries[test_name]['step'] = row['step']
+    tries[test_name]['step'] = str(abs(int(row['step'])))
     tries[test_name]['status'] = row['status']
     tries[test_name]['time'] = row['time']
     tries[test_name]['attempt_id'] = row['attempt_id']
