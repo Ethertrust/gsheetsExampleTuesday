@@ -101,7 +101,16 @@ axs[3,0].set_yticks(np.arange(-0.9, 1.0, 0.4))
 axs[3,0].set_ylim(-1, 1)
 axs[3,0].sharex(axs[1,0])
 
+gs = axs[1, 1].get_gridspec()
+print(axs[1:3, 1:])
+for ax in axs[1:3, 1:].flatten():
+    ax.remove()
+axbig = fig.add_subplot(gs[1:3, 1:], projection='3d')
+axbig.annotate('Big Axes \nGridSpec[1:, -1]', (0.1, 0.5),
+               xycoords='axes fraction', va='center')
+
 fig.subplots_adjust(hspace=0)
+# fig.tight_layout()
 fig.savefig("test.png")
 
 plt.show()
