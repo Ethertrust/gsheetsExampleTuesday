@@ -106,8 +106,16 @@ print(axs[1:3, 1:])
 for ax in axs[1:3, 1:].flatten():
     ax.remove()
 axbig = fig.add_subplot(gs[1:3, 1:], projection='3d')
-axbig.annotate('Big Axes \nGridSpec[1:, -1]', (0.1, 0.5),
-               xycoords='axes fraction', va='center')
+# axbig.annotate('Big Axes \nGridSpec[1:, -1]', (0.1, 0.5),
+#                xycoords='axes fraction', va='center')
+X = np.arange(-5, 5, 0.25)
+Y = np.arange(-5, 5, 0.25)
+X, Y = np.meshgrid(X, Y)
+R = np.sqrt(X**2 + Y**2)
+Z = np.sin(R)
+surf = axbig.plot_surface(X, Y, Z, rstride=1, cstride=1,
+                       linewidth=0, antialiased=False)
+axbig.set_zlim(-1, 1)
 
 fig.subplots_adjust(hspace=0)
 # fig.tight_layout()
