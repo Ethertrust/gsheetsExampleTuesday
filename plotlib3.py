@@ -9,7 +9,7 @@ s3 = s1 * s2
 
 fig, axs = plt.subplots(3, 1, sharex=True)
 # Remove vertical space between Axes
-fig.subplots_adjust(hspace=0)
+# fig.subplots_adjust(hspace=0)
 
 # Plot each graph, and manually set the y tick values
 axs[0].plot(t, s1)
