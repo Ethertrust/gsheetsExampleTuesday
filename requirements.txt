@@ -3,3 +3,4 @@ gspread
 numpy
 openpyxl
 pandas
+matplotlib
